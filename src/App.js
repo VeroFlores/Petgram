@@ -1,6 +1,7 @@
 import React from 'react'
 // determinar rutas de las aplicación
 import { Router } from '@reach/router'
+// nos dará consumer
 import Context from './Context'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { Logo } from './components/Logo/index'
@@ -16,9 +17,9 @@ const App = () => {
   // detectar la ruta en la que estamos
 
   // Queremos ver el Id de cada una de las fotos
-  const UserLogged = ({ children }) => {
-    return children({ isAuth: false })
-  }
+  // const UserLogged = ({ children }) => {
+  //   return children({ isAuth: false })
+  // }
   return (
     <div>
       <Logo />

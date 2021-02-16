@@ -9,7 +9,9 @@ const client = new ApolloClient({
 })
 ReactDOM.render(
   // obtenemos la info de si el usuario esta eutenticado
-  <Context.Provider value={{ isAuth: false }}>
+  // context ofrece 2 componentest y uno de ellos es provider
+  //, value que estara disponible en todo el arbol
+  <Context.Provider>
     <ApolloProvider client={client}>
       <App />,
     </ApolloProvider>
