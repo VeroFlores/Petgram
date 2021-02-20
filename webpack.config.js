@@ -47,7 +47,7 @@ module.exports = {
           }
         },
         {
-          urlPattern: new RegExp('https://petgram-server-api-vero.veroflores.vercel.app'),
+          urlPattern: new RegExp('https://petgram-veroflores.vercel.app/'),
           handler: 'NetworkFirst',
           options: {
             cacheName: 'api'
