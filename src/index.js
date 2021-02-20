@@ -1,23 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client'
 import Context from './Context'
+import { setContext } from '@apollo/client/link/context'
+
+const httpLink = createHttpLink({
+  uri: 'https://petgram-server-api-vero-q6vytm0u1.vercel.app/graphql'
+})
+const authLink = setContext((_, { headers }) => {
+  const token = window.sessionStorage.getItem('token')
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : ''
+    }
+  }
+})
 const client = new ApolloClient({
-  uri: 'https://petgram-server-api-vero-q6vytm0u1.vercel.app/graphql',
-  request: operation => {
-    const token = window.sessionStorage.getItem('token')
-    const authorization = token ? `Bearer ${token}` : ''
-    operation.setContext({
-      headers: {
-        authorization
-      }
-    })
-  },
+  link: authLink.concat(httpLink),
   onError: ({ networkError }) => {
     if (networkError.result.code === 'invalid_token') {
-      window.localStorage.removeItem('token')
-      window.location.href = '/'
+      window.sessionStorage.removeItem('token')
+      window.location.href = '/user'
     }
   },
   cache: new InMemoryCache()
