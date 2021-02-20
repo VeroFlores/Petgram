@@ -2,7 +2,7 @@ import React from 'react'
 import { FavsWithQuery } from '../container/GetFavorites'
 import { Helmet } from 'react-helmet'
 
-export const Favs = () => {
+export default () => {
   return (
     <>
       <Helmet>

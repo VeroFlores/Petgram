@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, Suspense } from 'react'
 // determinar rutas de las aplicación
 import { Router, Redirect } from '@reach/router'
 // nos dará consumer
@@ -8,11 +8,11 @@ import { Logo } from './components/Logo/index'
 import { NavBar } from './components/NavBar/index'
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
-import { Favs } from './pages/Favs'
+// import { Favs } from './pages/Favs'
 import { User } from './pages/User'
 import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import { NotFound } from './pages/NotFound'
-
+const Favs = React.lazy(() => import('./pages/Favs'))
 const App = () => {
   // obtenemos query string
   // detectar la ruta en la que estamos
@@ -23,7 +23,7 @@ const App = () => {
   const { isAuth } = useContext(Context)
   // }
   return (
-    <div>
+    <Suspense fallback={<div />}>
 
       <GlobalStyle />
       <Logo />
@@ -43,7 +43,7 @@ const App = () => {
       {/* cosumer nos yudaba saber si el usuario está auenticado */}
 
       <NavBar />
-    </div>
+    </Suspense>
   )
 }
 export default App

@@ -2,8 +2,7 @@ import React from 'react'
 import { ListOfCategories } from '../components/ListOfCategories/index'
 import { ListOfPhotoCards } from '../container/ListOfPhotoCards'
 import { Layout } from '../components/Layout/index'
-export const Home = ({ id }) => {
-  console.log('home')
+const HomePage = ({ id }) => {
   return (
     <Layout title='Tu app de Fotos' subtitle='con Petgram puedes encontrar fotos de animales domésticos y darles like'>
       <ListOfCategories />
@@ -11,3 +10,8 @@ export const Home = ({ id }) => {
     </Layout>
   )
 }
+// usar react memo evita que se re renderiza un componente que no es necesario renderizar
+// usando polifill de los tools es posible los componentes renderizados
+export const Home = React.memo(HomePage, (prevProps, props) => {
+  return prevProps.id === props.id
+})
