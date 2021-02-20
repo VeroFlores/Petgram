@@ -48,7 +48,9 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "serve": "^11.3.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.1.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
