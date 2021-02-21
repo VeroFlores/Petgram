@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve --history-api-fallback",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cypress open",
     "lint": "standard",
     "vercel-build": "npm run build",
     "serve:dev": "webpack --mode development && npx serve dist -s"
