@@ -18,7 +18,7 @@ const useCategoriesData = () => {
   }, [])
   return { categories, loading }
 }
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const { categories, loading } = useCategoriesData()
   const [showFixed, setShowFixed] = useState(false)
   useEffect(() => {
@@ -33,7 +33,7 @@ export const ListOfCategories = () => {
     return () => document.removeEventListener('scroll', onScroll)
   }, [showFixed])
   const renderList = (fixed) => (
-    <List fixed={fixed}>
+    <List fixed={fixed ? 'fixed' : ''}>
       {
         loading
           ? <Item key='loading'><Category /></Item>
@@ -51,3 +51,4 @@ export const ListOfCategories = () => {
 
   )
 }
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)

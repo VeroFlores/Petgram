@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link, Image } from './styles'
 // usar link para evitar recargar la página
-const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
-export const Category = ({ cover = DEFAULT_IMAGE, path = '#', emoji = '?' }) => (
-  <Link to={path}>
+export const Category = ({ id, cover, emoji }) => (
+  <Link to={`/pet/${id}`}>
     <Image src={cover} />
     {emoji}
   </Link>
