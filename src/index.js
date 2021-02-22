@@ -4,6 +4,7 @@ import App from './App'
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client'
 import Context from './Context'
 import { setContext } from '@apollo/client/link/context'
+import { onError } from '@apollo/client/link/error'
 
 const httpLink = createHttpLink({
   uri: 'https://petgram-server-api-vero-q6vytm0u1.vercel.app/graphql'
@@ -19,12 +20,12 @@ const authLink = setContext((_, { headers }) => {
 })
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  onError: ({ networkError }) => {
-    if (networkError.result.code === 'invalid_token') {
+  onError: onError(({ networkError }) => {
+    if (networkError && networkError.result.code === 'invalid_token') {
       window.sessionStorage.removeItem('token')
-      window.location.href = '/user'
+      window.location = '/user'
     }
-  },
+  }),
   cache: new InMemoryCache()
 })
 

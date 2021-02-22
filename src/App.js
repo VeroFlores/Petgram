@@ -34,7 +34,7 @@ const App = () => {
         <Detail path='/detail/:detailId' />
         {/* si no es Auth se carga la pagina notRegistered */}
         {!isAuth && <NotRegisteredUser path='/login' />}
-        {!isAuth && <Redirect from='/favs' to='/login' />}
+        {!isAuth && <Redirect notThrow from='/favs' to='/login' />}
         {!isAuth && <Redirect from='/user' to='/login' />}
         {isAuth && <Redirect from='/login' to='/' />}
         <Favs path='favs' />

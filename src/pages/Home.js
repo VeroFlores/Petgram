@@ -1,12 +1,12 @@
 import React from 'react'
 import { ListOfCategories } from '../components/ListOfCategories/index'
-import { ListOfPhotoCards } from '../container/ListOfPhotoCards'
+import { ListOfPhotoCardsComponent } from '../components/ListOfPhotoCard'
 import { Layout } from '../components/Layout/index'
 const HomePage = ({ id }) => {
   return (
     <Layout title='Tu app de Fotos' subtitle='con Petgram puedes encontrar fotos de animales domésticos y darles like'>
       <ListOfCategories />
-      <ListOfPhotoCards categoryId={id} />
+      <ListOfPhotoCardsComponent categoryId={id} />
     </Layout>
   )
 }
