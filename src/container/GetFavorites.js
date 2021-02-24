@@ -20,7 +20,8 @@ const renderProp = ({ loading, error, data }) => {
   return <ListOfFavs favs={favs} />
 }
 export const FavsWithQuery = () => (
-  <Query query={GET_FAVORITES}>
+  // con fetch policy siempre ira a  la red parar recuperar los datos y no fiarse de los datos
+  <Query query={GET_FAVORITES} fetchPolicy='network-only'>
     {renderProp}
   </Query>
 )
