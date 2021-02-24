@@ -7,6 +7,5 @@ export default () => {
     <Layout title='Favoritos'>
       <FavsWithQuery />
     </Layout>
-
   )
 }

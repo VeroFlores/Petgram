@@ -5,7 +5,6 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const path = require('path')
 
 module.exports = {
-
   output: {
     // output de compilacion
     filename: 'app.bundle.js',
@@ -48,7 +47,7 @@ module.exports = {
           }
         },
         {
-          urlPattern: new RegExp('https://petgram-veroflores.vercel.app/'),
+          urlPattern: new RegExp('https://petgram-server-api-vero.vercel.app/'),
           handler: 'NetworkFirst',
           options: {
             cacheName: 'api'
