@@ -3,9 +3,18 @@ import { fadeIn } from '../../styles/animation'
 export const List = styled.ul`
 display:flex;
 overflow:scroll;
+padding:0px;
+margin-bottom:1rem;
 &::-webkit-scrollbar {
-    display: none;
-  }
+    width: 3px;
+    };
+    &::-webkit-scrollbar-thumb {
+    background: #ed79a7; 
+    border-radius: 16px;
+    };
+    &::-webkit-scrollbar-thumb:hover {
+    background:  #ed79a7; 
+    };
 width:100%;
 ${props => props.fixed && css`{
   ${fadeIn({ time: '5s' })};

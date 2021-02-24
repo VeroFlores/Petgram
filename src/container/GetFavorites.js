@@ -1,7 +1,7 @@
 import React from 'react'
 import { gql } from '@apollo/client'
 import { Query } from '@apollo/client/react/components'
-import { ListOfFavs } from '../components/ListOfFavs/index'
+import { ListOfFavs } from '../components/ListOfFavs'
 const GET_FAVORITES = gql`
 query getFavs {
     favs {

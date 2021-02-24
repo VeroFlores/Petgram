@@ -7,6 +7,7 @@ const path = require('path')
 module.exports = {
 
   output: {
+    // output de compilacion
     filename: 'app.bundle.js',
     publicPath: '/'
   },

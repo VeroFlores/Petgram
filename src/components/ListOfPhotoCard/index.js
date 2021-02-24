@@ -1,5 +1,6 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard/index'
+import { List } from './styles'
 // permite envolver el componennte , se llama componente de orden superior funcion como parametro
 // const withPhotos = gql`
 //   query getPhotos ($categoryId: ID){
@@ -15,12 +16,11 @@ import { PhotoCard } from '../PhotoCard/index'
 // `
 // console.log(withPhotos)
 export const ListOfPhotoCardsComponent = ({ data }) => {
-  console.log(data)
   return (
-    <ul>
+    <List>
       {data.photos.map((photo) => (
         <PhotoCard key={photo.id} {...photo} />
       ))}
-    </ul>
+    </List>
   )
 }
