@@ -4,11 +4,8 @@ import { Layout } from '../components/Layout/index'
 
 export default () => {
   return (
-    <>
-      <Layout title='Tus favoritos' subtitle='con Petgram puedes encontrar fotos de animales domésticos y darles like'>
-        <FavsWithQuery />
-      </Layout>
-
-    </>
+    <Layout title='Favoritos'>
+      <FavsWithQuery />
+    </Layout>
   )
 }

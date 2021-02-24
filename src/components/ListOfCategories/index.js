@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { Category } from '../category/index'
+import { CategorySkeleton } from './skeletonComponent'
 import {
   List, Item
 } from './styles'
@@ -36,7 +37,13 @@ const ListOfCategoriesComponent = () => {
     <List fixed={fixed ? 'fixed' : ''}>
       {
         loading
-          ? <Item key='loading'><Category /></Item>
+          ? [1, 2, 3, 4, 5, 6].map((key) => {
+              return (
+                <Item key={key}>
+                  <CategorySkeleton />
+                </Item>
+              )
+            })
           : categories.map((category) =>
             <Item key={category.id}><Category {...category} path={`/pet/${category.id}`} /></Item>)
       }

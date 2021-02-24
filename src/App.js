@@ -30,13 +30,13 @@ const App = () => {
       <Router>
         <NotFound default />
         <Home path='/' />
-        <Home path='/pet/:categoryId' />
+        <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
         {/* si no es Auth se carga la pagina notRegistered */}
         {!isAuth && <NotRegisteredUser path='/login' />}
-        {!isAuth && <Redirect notThrow from='/favs' to='/login' />}
-        {!isAuth && <Redirect from='/user' to='/login' />}
-        {isAuth && <Redirect from='/login' to='/' />}
+        {!isAuth && <Redirect noThrow from='/favs' to='/login' />}
+        {!isAuth && <Redirect noThrow from='/user' to='/login' />}
+        {isAuth && <Redirect noThrow from='/login' to='/' />}
         <Favs path='favs' />
         <User path='user' />
       </Router>

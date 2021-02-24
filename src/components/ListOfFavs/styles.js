@@ -17,7 +17,6 @@ padding-top:32px;
 `
 export const Image = styled.img`
 object-fit:cover;
-height:100%;
 width:100%;
 position:absolute;
 `
