@@ -1,4 +1,4 @@
-import styled,{css} from 'styled-components'
+import styled, { css } from 'styled-components'
 import { fadeIn } from '../../styles/animation'
 export const List = styled.ul`
 display:flex;
@@ -7,7 +7,7 @@ overflow:scroll;
     display: none;
   }
 width:100%;
-${props=>props.fixed && css`{
+${props => props.fixed && css`{
   ${fadeIn({ time: '5s' })};
   background:#fff;
   border-radius:60px;

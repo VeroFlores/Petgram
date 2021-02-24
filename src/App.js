@@ -30,7 +30,7 @@ const App = () => {
       <Router>
         <NotFound default />
         <Home path='/' />
-        <Home path='/pet/:categoryId' />
+        <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
         {/* si no es Auth se carga la pagina notRegistered */}
         {!isAuth && <NotRegisteredUser path='/login' />}
