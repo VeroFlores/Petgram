@@ -1,7 +1,12 @@
-## curso-platzi-react-avanzado ⚛️
+# Petgram :star2:
 
-**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev
+## 1. Descripción del Proyecto
 
-**¡Sígueme en Twitch para streams sobre desarrollo web!** 👉 https://www.twitch.tv/midudev
+![image](https://user-images.githubusercontent.com/68167686/109109152-cd200600-7702-11eb-81e3-636df35f9ed6.png)
+## 2. Tecnologías Usadas
 
-Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
+- ReactJs
+- Styled-Component 
+- Graphql
+- react-apollo
+- @reach-router
